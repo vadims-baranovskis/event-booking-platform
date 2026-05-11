@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Database\Eloquent\Relations\HasMany;
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -28,5 +28,10 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function bookings(): HasMany
+    {
+    return $this->hasMany(Booking::class);
     }
 }
