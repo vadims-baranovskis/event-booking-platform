@@ -55,7 +55,7 @@
             </div>
 
             <div class="stat-card">
-                <span>€{{ $startingPrice }}</span>
+                <span>€{{ number_format($startingPrice, 0) }}</span>
                 <p>Starting price</p>
             </div>
         </section>
@@ -139,27 +139,27 @@
             <div class="events-grid">
                 @forelse ($events as $event)
                     <article class="event-card">
-                        <img src="{{ asset($event['image']) }}" alt="{{ $event['title'] }}">
+                        <img src="{{ asset($event->image) }}" alt="{{ $event->title }}">
 
                         <div class="event-card-body">
                             <div class="event-meta">
-                                <span>{{ $event['category'] }}</span>
-                                <span>{{ \Carbon\Carbon::parse($event['date'])->format('d.m.Y') }}</span>
+                                <span>{{ $event->category->name }}</span>
+                                <span>{{ $event->event_date->format('d.m.Y') }}</span>
                             </div>
 
-                            <h3>{{ $event['title'] }}</h3>
+                            <h3>{{ $event->title }}</h3>
 
                             <p class="event-description">
-                                {{ $event['description'] }}
+                                {{ $event->description }}
                             </p>
 
                             <div class="event-info">
-                                <span>{{ $event['location'] }}</span>
-                                <span>{{ $event['available_tickets'] }} tickets left</span>
+                                <span>{{ $event->location }}</span>
+                                <span>{{ $event->available_tickets }} tickets left</span>
                             </div>
 
                             <div class="event-footer">
-                                <strong>€{{ $event['price'] }}</strong>
+                                <strong>€{{ number_format($event->price, 0) }}</strong>
                                 <a href="#" class="card-button">View details</a>
                             </div>
                         </div>
