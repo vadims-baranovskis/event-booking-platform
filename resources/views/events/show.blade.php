@@ -12,10 +12,25 @@
             <a href="{{ url('/') }}" class="logo">EventBooking</a>
 
             <div class="nav-links">
-                <a href="{{ url('/') }}">Home</a>
-                <a href="{{ url('/#events') }}">Events</a>
-                <a href="#" class="nav-button">Login</a>
-            </div>
+    <a href="{{ url('/') }}">Home</a>
+    <a href="{{ url('/#events') }}">Events</a>
+
+    @auth
+        <span class="user-badge">{{ auth()->user()->name }}</span>
+
+        @if (auth()->user()->role === 'admin')
+            <span class="role-badge">Admin</span>
+        @endif
+
+        <form method="POST" action="{{ route('logout') }}" class="logout-form">
+            @csrf
+            <button type="submit" class="nav-button logout-button">Logout</button>
+        </form>
+    @else
+        <a href="{{ route('login') }}" class="nav-button">Login</a>
+        <a href="{{ route('register') }}" class="nav-button">Register</a>
+    @endauth
+</div>
         </nav>
     </header>
 
