@@ -58,3 +58,23 @@ Route::get('/', function (Request $request) {
         'startingPrice' => (clone $allEvents)->min('price'),
     ]);
 });
+
+Route::get('/events/{event}', function (Event $event) {
+    abort_if(! $event->is_active, 404);
+
+    $event->load('category');
+
+    $relatedEvents = Event::query()
+        ->with('category')
+        ->where('is_active', true)
+        ->where('id', '!=', $event->id)
+        ->where('category_id', $event->category_id)
+        ->orderBy('event_date')
+        ->take(3)
+        ->get();
+
+    return view('events.show', [
+        'event' => $event,
+        'relatedEvents' => $relatedEvents,
+    ]);
+})->name('events.show');

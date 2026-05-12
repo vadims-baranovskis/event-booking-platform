@@ -160,7 +160,7 @@
 
                             <div class="event-footer">
                                 <strong>€{{ number_format($event->price, 0) }}</strong>
-                                <a href="#" class="card-button">View details</a>
+                                <a href="{{ route('events.show', $event) }}" class="card-button">View details</a>
                             </div>
                         </div>
                     </article>
