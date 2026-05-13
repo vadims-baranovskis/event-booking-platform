@@ -74,18 +74,58 @@
                 </div>
 
                 <div class="booking-preview-card">
-                    <h2>Reserve tickets</h2>
-                    <p>
-                        Ticket reservation will be available after user authentication is added.
-                        This project does not process real payments.
-                    </p>
+    <h2>Reserve tickets</h2>
 
-                    <div class="booking-preview-form">
-                        <label for="quantity">Quantity</label>
-                        <input type="number" id="quantity" value="1" min="1" max="{{ $event->available_tickets }}" disabled>
-                        <button class="primary-button" disabled>Booking coming soon</button>
-                    </div>
-                </div>
+    @if (session('success'))
+        <div class="success-message">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @auth
+        @if ($event->available_tickets > 0)
+            <p>
+                Choose the number of tickets you want to reserve.
+                This project does not process real payments.
+            </p>
+
+            <form method="POST" action="{{ route('bookings.store', $event) }}" class="booking-preview-form">
+                @csrf
+
+                <label for="quantity">Quantity</label>
+                <input
+                    type="number"
+                    id="quantity"
+                    name="quantity"
+                    value="{{ old('quantity', 1) }}"
+                    min="1"
+                    max="{{ $event->available_tickets }}"
+                    required
+                >
+
+                @error('quantity')
+                    <div class="form-error">{{ $message }}</div>
+                @enderror
+
+                <button type="submit" class="primary-button">
+                    Reserve tickets
+                </button>
+            </form>
+        @else
+            <p>No tickets are currently available for this event.</p>
+        @endif
+    @else
+        <p>
+            Please log in or create an account to reserve tickets.
+            This project does not process real payments.
+        </p>
+
+        <div class="booking-preview-actions">
+            <a href="{{ route('login') }}" class="primary-button">Login</a>
+            <a href="{{ route('register') }}" class="secondary-button">Register</a>
+        </div>
+    @endauth
+</div>
             </div>
         </section>
 

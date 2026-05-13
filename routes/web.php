@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\AuthController;
 use App\Models\Event;
 use Illuminate\Http\Request;
@@ -91,3 +92,7 @@ Route::middleware('guest')->group(function () {
 Route::post('/logout', [AuthController::class, 'logout'])
     ->middleware('auth')
     ->name('logout');
+
+Route::post('/events/{event}/bookings', [BookingController::class, 'store'])
+    ->middleware('auth')
+    ->name('bookings.store');

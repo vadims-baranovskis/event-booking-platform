@@ -752,3 +752,23 @@ main {
     color: #f97316;
     font-weight: 700;
 }
+
+.success-message {
+    margin-bottom: 16px;
+    padding: 12px 14px;
+    background: #dcfce7;
+    color: #166534;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+.booking-preview-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.booking-preview-actions .secondary-button {
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+}
