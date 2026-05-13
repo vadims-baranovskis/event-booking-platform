@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\AuthController;
 use App\Models\Event;
@@ -103,3 +104,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/bookings/{booking}/cancel', [BookingController::class, 'cancel'])
         ->name('bookings.cancel');
 });
+
+Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])
+    ->middleware('auth')
+    ->name('admin.dashboard');

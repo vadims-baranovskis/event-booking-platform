@@ -19,6 +19,7 @@
         <span class="user-badge">{{ auth()->user()->name }}</span>
 
         @if (auth()->user()->role === 'admin')
+            <a href="{{ route('admin.dashboard') }}">Admin panel</a>
             <span class="role-badge">Admin</span>
         @endif
 
