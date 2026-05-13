@@ -93,6 +93,13 @@ Route::post('/logout', [AuthController::class, 'logout'])
     ->middleware('auth')
     ->name('logout');
 
-Route::post('/events/{event}/bookings', [BookingController::class, 'store'])
-    ->middleware('auth')
-    ->name('bookings.store');
+Route::middleware('auth')->group(function () {
+    Route::get('/my-bookings', [BookingController::class, 'index'])
+        ->name('bookings.index');
+
+    Route::post('/events/{event}/bookings', [BookingController::class, 'store'])
+        ->name('bookings.store');
+
+    Route::post('/bookings/{booking}/cancel', [BookingController::class, 'cancel'])
+        ->name('bookings.cancel');
+});

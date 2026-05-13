@@ -16,6 +16,7 @@
     <a href="{{ url('/#events') }}">Events</a>
 
     @auth
+        <a href="{{ route('bookings.index') }}">My bookings</a>
         <span class="user-badge">{{ auth()->user()->name }}</span>
 
         @if (auth()->user()->role === 'admin')

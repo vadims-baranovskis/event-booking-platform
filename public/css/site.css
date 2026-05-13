@@ -772,3 +772,131 @@ main {
     background: rgba(255, 255, 255, 0.12);
     color: white;
 }
+
+.bookings-main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 20px 80px;
+}
+
+.bookings-main h1 {
+    margin: 0;
+    font-size: 38px;
+}
+
+.bookings-list {
+    display: grid;
+    gap: 22px;
+}
+
+.booking-card {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    overflow: hidden;
+    background: white;
+    border-radius: 22px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.booking-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.booking-content {
+    padding: 24px;
+}
+
+.booking-content h2 {
+    margin: 0 0 10px;
+    font-size: 26px;
+}
+
+.booking-content p {
+    margin: 0 0 20px;
+    color: #6b7280;
+}
+
+.booking-details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.booking-details-grid div {
+    padding: 14px;
+    background: #f4f6fb;
+    border-radius: 14px;
+}
+
+.booking-details-grid span {
+    display: block;
+    margin-bottom: 6px;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.booking-details-grid strong {
+    color: #1f2937;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 999px;
+    font-size: 13px;
+}
+
+.status-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-confirmed {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-cancelled {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.booking-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.booking-actions form {
+    margin: 0;
+}
+
+.cancel-button {
+    padding: 10px 14px;
+    border: none;
+    background: #fee2e2;
+    color: #991b1b;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media (max-width: 780px) {
+    .booking-card {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
