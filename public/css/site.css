@@ -1146,3 +1146,22 @@ main {
     color: #6b7280;
     font-size: 14px;
 }
+
+.table-muted {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.status-form {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin: 0;
+}
+
+.status-form select {
+    padding: 8px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 14px;
+}

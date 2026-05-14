@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminBookingController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\AdminEventController;
 use App\Http\Controllers\AdminController;
@@ -149,4 +150,12 @@ Route::middleware('auth')->group(function () {
 
     Route::delete('/admin/categories/{category}', [AdminCategoryController::class, 'destroy'])
         ->name('admin.categories.destroy');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/bookings', [AdminBookingController::class, 'index'])
+        ->name('admin.bookings.index');
+
+    Route::put('/admin/bookings/{booking}/status', [AdminBookingController::class, 'updateStatus'])
+        ->name('admin.bookings.update-status');
 });

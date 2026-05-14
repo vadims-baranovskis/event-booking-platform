@@ -10,12 +10,14 @@
     <header class="details-header">
         <nav class="navbar">
             <a href="{{ url('/') }}" class="logo">EventBooking</a>
+            
 
             <div class="nav-links">
                 <a href="{{ url('/') }}">Home</a>
                 <a href="{{ route('admin.dashboard') }}">Admin panel</a>
                 <a href="{{ route('admin.events.index') }}">Events</a>
                 <a href="{{ route('admin.categories.index') }}">Categories</a>
+                <a href="{{ route('admin.bookings.index') }}">Bookings</a>
 
                 <span class="user-badge">{{ auth()->user()->name }}</span>
                 <span class="role-badge">Admin</span>

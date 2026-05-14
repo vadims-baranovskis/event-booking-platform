@@ -15,6 +15,7 @@
                 <a href="{{ url('/') }}">Home</a>
                 <a href="{{ url('/#events') }}">Events</a>
                 <a href="{{ route('bookings.index') }}">My bookings</a>
+                <a href="{{ route('admin.bookings.index') }}">Bookings</a>
 
                 <span class="user-badge">{{ auth()->user()->name }}</span>
                 <span class="role-badge">Admin</span>
@@ -124,7 +125,7 @@
             <article class="admin-action-card">
                 <h3>Booking management</h3>
                 <p>Confirm or cancel user bookings.</p>
-                <span class="disabled-link">Coming later</span>
+                <a href="{{ route('admin.bookings.index') }}" class="card-button">Manage bookings</a>
             </article>
         </section>
     </main>

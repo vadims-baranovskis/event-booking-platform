@@ -15,6 +15,7 @@
                 <a href="{{ url('/') }}">Home</a>
                 <a href="{{ route('admin.dashboard') }}">Admin panel</a>
                 <a href="{{ route('admin.events.index') }}">Events</a>
+                <a href="{{ route('admin.bookings.index') }}">Bookings</a>
 
                 <span class="user-badge">{{ auth()->user()->name }}</span>
                 <span class="role-badge">Admin</span>
