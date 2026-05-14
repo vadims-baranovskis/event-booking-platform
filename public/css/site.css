@@ -1132,3 +1132,17 @@ main {
         align-items: flex-start;
     }
 }
+
+.admin-error-box {
+    margin-bottom: 20px;
+    padding: 12px 14px;
+    background: #fee2e2;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+.form-help {
+    margin: 0;
+    color: #6b7280;
+    font-size: 14px;
+}

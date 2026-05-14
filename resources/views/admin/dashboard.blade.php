@@ -118,7 +118,7 @@
             <article class="admin-action-card">
                 <h3>Category management</h3>
                 <p>Create and update event categories.</p>
-                <span class="disabled-link">Coming later</span>
+                <a href="{{ route('admin.categories.index') }}" class="card-button">Manage categories</a>
             </article>
 
             <article class="admin-action-card">

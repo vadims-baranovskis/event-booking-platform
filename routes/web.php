@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\AdminEventController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookingController;
@@ -128,4 +129,24 @@ Route::middleware('auth')->group(function () {
 
     Route::delete('/admin/events/{event}', [AdminEventController::class, 'destroy'])
         ->name('admin.events.destroy');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/categories', [AdminCategoryController::class, 'index'])
+        ->name('admin.categories.index');
+
+    Route::get('/admin/categories/create', [AdminCategoryController::class, 'create'])
+        ->name('admin.categories.create');
+
+    Route::post('/admin/categories', [AdminCategoryController::class, 'store'])
+        ->name('admin.categories.store');
+
+    Route::get('/admin/categories/{category}/edit', [AdminCategoryController::class, 'edit'])
+        ->name('admin.categories.edit');
+
+    Route::put('/admin/categories/{category}', [AdminCategoryController::class, 'update'])
+        ->name('admin.categories.update');
+
+    Route::delete('/admin/categories/{category}', [AdminCategoryController::class, 'destroy'])
+        ->name('admin.categories.destroy');
 });
