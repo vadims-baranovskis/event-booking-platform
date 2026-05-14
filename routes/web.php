@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminEventController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\AuthController;
@@ -108,3 +109,23 @@ Route::middleware('auth')->group(function () {
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])
     ->middleware('auth')
     ->name('admin.dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/events', [AdminEventController::class, 'index'])
+        ->name('admin.events.index');
+
+    Route::get('/admin/events/create', [AdminEventController::class, 'create'])
+        ->name('admin.events.create');
+
+    Route::post('/admin/events', [AdminEventController::class, 'store'])
+        ->name('admin.events.store');
+
+    Route::get('/admin/events/{event}/edit', [AdminEventController::class, 'edit'])
+        ->name('admin.events.edit');
+
+    Route::put('/admin/events/{event}', [AdminEventController::class, 'update'])
+        ->name('admin.events.update');
+
+    Route::delete('/admin/events/{event}', [AdminEventController::class, 'destroy'])
+        ->name('admin.events.destroy');
+});

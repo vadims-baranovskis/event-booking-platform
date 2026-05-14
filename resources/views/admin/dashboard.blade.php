@@ -109,11 +109,11 @@
         </section>
 
         <section class="admin-actions-grid">
-            <article class="admin-action-card">
-                <h3>Event management</h3>
-                <p>Create, edit and delete events.</p>
-                <span class="disabled-link">Coming next</span>
-            </article>
+          <article class="admin-action-card">
+            <h3>Event management</h3>
+            <p>Create, edit and delete events.</p>
+            <a href="{{ route('admin.events.index') }}" class="card-button">Manage events</a>
+        </article>
 
             <article class="admin-action-card">
                 <h3>Category management</h3>

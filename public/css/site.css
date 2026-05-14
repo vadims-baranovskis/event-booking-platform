@@ -1038,3 +1038,97 @@ main {
         padding: 20px;
     }
 }
+
+.admin-event-thumb {
+    width: 72px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.table-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.table-actions form {
+    margin: 0;
+}
+
+.small-edit-button,
+.small-delete-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.small-edit-button {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.small-delete-button {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.admin-form-card {
+    padding: 34px;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.admin-form-card h1 {
+    margin: 0 0 24px;
+    font-size: 36px;
+}
+
+.admin-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.admin-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 15px;
+    resize: vertical;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-actions {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+@media (max-width: 780px) {
+    .admin-form {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .table-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
