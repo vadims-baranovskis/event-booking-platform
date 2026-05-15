@@ -46,31 +46,33 @@ The project was created as a demo web application for internship and junior web 
 
 ### Home page
 
-![Home page](screenshots/home-page.png)
+### Home page
+
+<img src="screenshots/home-page.png" alt="Home page" width="800">
 
 ### Event details
 
-![Event details](screenshots/event-details.png)
+<img src="screenshots/event-details.png" alt="Event details" width="800">
 
 ### My bookings
 
-![My bookings](screenshots/my-bookings.png)
+<img src="screenshots/my-bookings.png" alt="My bookings" width="800">
 
 ### Admin dashboard
 
-![Admin dashboard](screenshots/admin-dashboard.png)
+<img src="screenshots/admin-dashboard.png" alt="Admin dashboard" width="800">
 
 ### Admin events
 
-![Admin events](screenshots/admin-events.png)
+<img src="screenshots/admin-events.png" alt="Admin events" width="800">
 
 ### Admin categories
 
-![Admin categories](screenshots/admin-categories.png)
+<img src="screenshots/admin-categories.png" alt="Admin categories" width="800">
 
 ### Admin bookings
 
-![Admin bookings](screenshots/admin-bookings.png)
+<img src="screenshots/admin-bookings.png" alt="Admin bookings" width="800">
 
 ## Demo Accounts
 
