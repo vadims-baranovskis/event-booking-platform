@@ -174,7 +174,7 @@ Public pages:
 
 ```text
 /
- /events/{event}
+/events/{event}
 /login
 /register
 /my-bookings
