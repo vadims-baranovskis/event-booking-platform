@@ -11,7 +11,7 @@
         <nav class="navbar">
             <a href="{{ url('/') }}" class="logo">EventBooking</a>
 
-            <div class="nav-links">
+<div class="nav-links">
     <a href="{{ url('/') }}">Home</a>
     <a href="{{ url('/#events') }}">Events</a>
 

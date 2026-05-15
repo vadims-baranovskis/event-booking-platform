@@ -1,58 +1,210 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Event Booking Platform
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Event Booking Platform is a Laravel portfolio project for browsing events and reserving tickets online.
 
-## About Laravel
+The project was created as a demo web application for internship and junior web development portfolio purposes. Real payments are not implemented. Ticket reservation is used only as demo functionality.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Public users
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- View event catalog
+- Search events by name
+- Filter events by location, date and price
+- Open event details page
+- Register and log in
+- Reserve tickets for events
+- View personal bookings
+- Cancel personal bookings
 
-## Learning Laravel
+### Admin users
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- View admin dashboard
+- Manage events
+- Create, edit and delete events
+- Activate or deactivate events
+- Manage categories
+- Create, edit and delete categories
+- View all bookings
+- Change booking status:
+  - pending
+  - confirmed
+  - cancelled
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Technologies Used
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+- PHP
+- Laravel
+- MySQL
+- Blade
+- HTML
+- CSS
+- Git
+- GitHub
 
-## Agentic Development
+## Screenshots
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### Home page
 
-```bash
-composer require laravel/boost --dev
+![Home page](screenshots/home-page.png)
 
-php artisan boost:install
+### Event details
+
+![Event details](screenshots/event-details.png)
+
+### My bookings
+
+![My bookings](screenshots/my-bookings.png)
+
+### Admin dashboard
+
+![Admin dashboard](screenshots/admin-dashboard.png)
+
+### Admin events
+
+![Admin events](screenshots/admin-events.png)
+
+### Admin categories
+
+![Admin categories](screenshots/admin-categories.png)
+
+### Admin bookings
+
+![Admin bookings](screenshots/admin-bookings.png)
+
+## Demo Accounts
+
+### Admin account
+
+```text
+Email: admin@example.com
+Password: password
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### User account
 
-## Contributing
+```text
+Email: user@example.com
+Password: password
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## How to Run Locally
 
-## Code of Conduct
+Clone the repository:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+git clone https://github.com/vadims-baranovskis/event-booking-platform.git
+cd event-booking-platform
+```
 
-## Security Vulnerabilities
+Install PHP dependencies:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+composer install
+```
 
-## License
+Install frontend dependencies:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+npm install
+```
+
+Create environment file:
+
+```bash
+cp .env.example .env
+```
+
+Generate application key:
+
+```bash
+php artisan key:generate
+```
+
+Configure database in `.env`:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=event_booking_platform
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Run migrations and seeders:
+
+```bash
+php artisan migrate --seed
+```
+
+Start local server:
+
+```bash
+php artisan serve
+```
+
+Or open the project through Laravel Herd:
+
+```text
+http://event-booking-platform.test
+```
+
+## Database Structure
+
+Main tables:
+
+- users
+- categories
+- events
+- bookings
+
+Main relationships:
+
+- Category has many events
+- Event belongs to category
+- User has many bookings
+- Event has many bookings
+- Booking belongs to user
+- Booking belongs to event
+
+## Main Pages
+
+Public pages:
+
+```text
+/
+ /events/{event}
+/login
+/register
+/my-bookings
+```
+
+Admin pages:
+
+```text
+/admin/dashboard
+/admin/events
+/admin/categories
+/admin/bookings
+```
+
+## Project Status
+
+The main functionality is implemented:
+
+- event catalog
+- event details page
+- authentication
+- ticket booking
+- user bookings page
+- admin dashboard
+- event management
+- category management
+- booking status management
+
+## Notes
+
+This project does not process real payments.
+
+All bookings are stored only as demo reservations in the database.

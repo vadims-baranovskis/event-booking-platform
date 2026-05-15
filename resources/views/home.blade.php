@@ -11,11 +11,13 @@
         <nav class="navbar">
             <a href="{{ url('/') }}" class="logo">EventBooking</a>
 
-            <div class="nav-links">
+<div class="nav-links">
     <a href="#events">Events</a>
     <a href="#filters">Search</a>
 
     @auth
+        <a href="{{ route('bookings.index') }}">My bookings</a>
+
         <span class="user-badge">{{ auth()->user()->name }}</span>
 
         @if (auth()->user()->role === 'admin')
