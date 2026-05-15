@@ -46,8 +46,6 @@ The project was created as a demo web application for internship and junior web 
 
 ### Home page
 
-### Home page
-
 <img src="screenshots/home-page.png" alt="Home page" width="800">
 
 ### Event details
