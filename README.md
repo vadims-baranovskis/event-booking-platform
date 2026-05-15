@@ -93,8 +93,8 @@ Password: password
 Clone the repository:
 
 ```bash
-git clone https://github.com/vadims-baranovskis/event-booking-platform.git
-cd event-booking-platform
+git clone https://github.com/vadims-baranovskis/event-booking-website.git
+cd event-booking-website
 ```
 
 Install PHP dependencies:
